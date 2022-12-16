@@ -1,34 +1,36 @@
-<main>
-  <section>
-    <mat-form-field class="input" appearance="outline">
-        <mat-label>Dólar</mat-label>
-        <input matInput type="number" [(ngModel)]="userValue" >
-        <button *ngIf="userValue" matSuffix mat-icon-button aria-label="Clear" (click)="userValue=0" class="x">
-          <mat-icon (click)="userValue= 0">close</mat-icon>
-        </button>
-      </mat-form-field>
 
+  <mat-card>
+    <section>
       <mat-form-field class="input" appearance="outline">
-        <mat-label>Real</mat-label>
-        <input matInput type="number" [(ngModel)]="result" disabled>
-        <button *ngIf="result" matSuffix mat-icon-button aria-label="Clear" (click)="result = 0" class="x">
-          <mat-icon (click)="userValue= 0">close</mat-icon>
-        </button>
-    </mat-form-field>
-  </section>
-  <div class="buttons">
-    <button mat-raised-button color="primary" (click)="calculate()">Calcular</button>
-    <button mat-raised-button color="warn" (click)="reset()">Limpar</button>
-  </div>
-    Última consulta: {{todayQuotation.create_date}}
-</main>
+          <mat-label>Dólar</mat-label>
+          <input matInput type="number" [(ngModel)]="userValue" >
+          <button *ngIf="userValue" matSuffix mat-icon-button aria-label="Clear" (click)="userValue=0" class="x">
+            <mat-icon (click)="userValue= 0">close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field class="input" appearance="outline">
+          <mat-label>Real</mat-label>
+          <input matInput type="number" [(ngModel)]="result" disabled>
+          <button *ngIf="result" matSuffix mat-icon-button aria-label="Clear" (click)="result = 0" class="x">
+            <mat-icon (click)="userValue= 0">close</mat-icon>
+          </button>
+      </mat-form-field>
+    </section>
+    <mat-card-actions align="start">
+        <button mat-raised-button color="primary" (click)="calculate()">Calcular</button>
+        <button mat-raised-button color="warn" (click)="reset()">Limpar</button>
+    </mat-card-actions>
+      Última consulta: {{todayQuotation.create_date}}
+  </mat-card>
+
 <div class="values" *ngIf="result">
   <p>
-    U$ 1 = R$ {{todayQuotation.low *1}}<br>
-    U$ 5 = R$ {{todayQuotation.low *5}}<br>
-    U$ 10 = R$ {{todayQuotation.low *10}}<br>
-    U$ 25 = R$ {{todayQuotation.low *25}}<br>
-    U$ 50 = R$ {{todayQuotation.low *50}}<br>
-    U$ 100 = R$ {{todayQuotation.low *100}}<br>
+    U$ 1 = R$ {{todayQuotation.bid *1}}<br>
+    U$ 5 = R$ {{todayQuotation.bid *5}}<br>
+    U$ 10 = R$ {{todayQuotation.bid *10}}<br>
+    U$ 25 = R$ {{todayQuotation.bid *25}}<br>
+    U$ 50 = R$ {{todayQuotation.bid *50}}<br>
+    U$ 100 = R$ {{todayQuotation.bid *100}}<br>
   </p>
 </div>

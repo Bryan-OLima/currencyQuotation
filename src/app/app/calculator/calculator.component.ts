@@ -35,7 +35,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   calculate(){
-    let quotation = this.todayQuotation.low;
+    let quotation = this.todayQuotation.bid;
     let value = this.userValue;
     return this.result = quotation * value;
   }
