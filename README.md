@@ -1,3 +1,5 @@
+# DISCLAIMER: The app code is on MASTER branch!
+
 # Currency quotation
 
 This web app was made for get the actual value of Dollars(USD) and quote it in Reais(BRL). I've focused on it to study and to improve my knowledge on Services structures and consuming some api. You can find it <a href="https://bryan-olima.github.io/currencyQuotation/" target="_blank">here</a>.
