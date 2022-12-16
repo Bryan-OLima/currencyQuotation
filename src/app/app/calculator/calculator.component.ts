@@ -40,7 +40,8 @@ export class CalculatorComponent implements OnInit {
     return this.result = quotation * value;
   }
 
-  reset(){
+  reset(): void{
     this.result = 0;
+    this.userValue = 0;
   }
 }
